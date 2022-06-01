@@ -12,9 +12,10 @@ const newFormHandler = async (event) => {
         'Content-Type': 'application/json',
       },
     });
-
+    const result = await response.json();
+    console.log(result);
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to create blog');
     }
@@ -28,9 +29,10 @@ const delButtonHandler = async (event) => {
     const response = await fetch(`/api/blogs/${id}`, {
       method: 'DELETE',
     });
-
+    const result = await response.json();
+    console.log(result);
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert('Failed to delete blog');
     }
