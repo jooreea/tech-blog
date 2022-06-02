@@ -12,8 +12,8 @@ const newFormHandler = async (event) => {
         'Content-Type': 'application/json',
       },
     });
-    const result = await response.json();
-    console.log(result);
+    // const result = await response.json();
+    // console.log(result);
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {
@@ -29,8 +29,8 @@ const delButtonHandler = async (event) => {
     const response = await fetch(`/api/blogs/${id}`, {
       method: 'DELETE',
     });
-    const result = await response.json();
-    console.log(result);
+    // const result = await response.json();
+    // console.log(result);
     if (response.ok) {
       document.location.replace('/dashboard');
     } else {

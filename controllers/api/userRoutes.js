@@ -9,7 +9,8 @@ router.post('/', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
 
-      res.status(200).json(userData);
+      // res.status(200).json(userData);
+      res.redirect('/dashboard');
     });
   } catch (err) {
     res.status(400).json(err);
@@ -17,6 +18,7 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
+  console.log("what?!")
   try {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
